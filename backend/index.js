@@ -17,7 +17,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://deploy-mern-1whq.vercel.app"],
+    methods:["POST","GET"],
+    credentials: true
+  }
+));
 
 // Database Connection with MongoDB
 mongoose.connect(process.env.MONGODB_URI)
