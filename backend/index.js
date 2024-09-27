@@ -6,7 +6,7 @@ import path from "path";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-const port = process.env.PORT || 4000;
+const port = 4000;
 const app = express();
 
 app.use(bodyParser.json());
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 const storage = multer.diskStorage({
   destination: './upload/images',
   filename: (req, file, cb) => {
-    return cb(null, ${file.fieldname}_${Date.now()}${path.extname(file.originalname)});
+    return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`);
   }
 });
 
@@ -40,7 +40,7 @@ app.use('/images', express.static('upload/images'));
 app.post("/upload", upload.single('product'), (req, res) => {
   res.json({
     success: 1,
-    image_url: http://localhost:${port}/images/${req.file.filename}
+    image_url: `http://localhost:${port}/images/${req.file.filename}`
   });
 });
 
