@@ -10,7 +10,7 @@ export const NewCollections = () => {
     .then((data)=>setNew_collection(data));
   },[])
   return (
-    <div className='new-collections'>
+    <div id = 'new-collections' className='new-collections'>
         <h1>NEW COLLECTIONS</h1>
         <hr />
         <div className="collections">
