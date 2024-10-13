@@ -31,6 +31,10 @@
 .hero-hand-icon img{
     width: 105px;
 }
+.hero-latest-btn a{
+    text-decoration: none; 
+    color: white;
+}
 .hero-latest-btn{
     display: flex;
     justify-content: center;
@@ -44,10 +48,6 @@
     color: white;
     font-size: 22px;
     font-weight: 500;
-}
-.hero-latest-btn a{
-    text-decoration: none; 
-    color: white;
 }
 .hero-right{
     flex: 1;
